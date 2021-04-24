@@ -5,7 +5,7 @@
 
 - [x] Simple -> [Introduction to CDI](https://quarkus.io/guides/cdi)
 - [x] Inject property values -> [Configuring you application](https://quarkus.io/guides/config)
-- [ ] Inject value from environment variable
+- [x] Inject value from environment variable -> [Configuration reference guide](https://quarkus.io/guides/config-reference#environment_variables)
 - [ ] Overwrite annotations with XML
 
 ## Hibernate
