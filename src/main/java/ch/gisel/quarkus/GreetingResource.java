@@ -4,10 +4,7 @@ import ch.gisel.quarkus.service.MyService;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 
 @ApplicationScoped
@@ -29,5 +26,12 @@ public class GreetingResource {
     @Path("/person/{id}")
     public String findPerson(@PathParam("id") long id) {
         return myService.findPerson(id);
+    }
+
+    @POST
+    @Produces(MediaType.TEXT_PLAIN)
+    @Path("/person/{name}")
+    public long createPerson(@PathParam("name") String name) {
+        return myService.createPerson(name);
     }
 }

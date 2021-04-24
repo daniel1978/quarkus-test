@@ -9,7 +9,7 @@
 - [ ] Overwrite annotations with XML
 
 ## Hibernate
-- [ ] Simple DB load
+- [x] Simple DB save/load [Using Hibernate ORM and JPA](https://quarkus.io/guides/hibernate-orm)
 
 ## CXF
 - [ ] REST Service

@@ -1,18 +1,24 @@
 package ch.gisel.quarkus.dao;
 
+import ch.gisel.quarkus.entity.Person;
 import org.eclipse.microprofile.config.inject.ConfigProperty;
 
 import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Inject;
+import javax.persistence.EntityManager;
 import java.util.HashMap;
 import java.util.Map;
 
 @ApplicationScoped
-public class MyFirstDAO {
+public class MyFirstDAO implements IMyFirstDAO {
 
     private Map<Long, String> names;
 
     @ConfigProperty(name = "message.no.person.found")
     String noPersonFoundMessage;
+
+    @Inject
+    EntityManager em;
 
     public MyFirstDAO() {
         names = new HashMap<>();
@@ -21,11 +27,20 @@ public class MyFirstDAO {
         names.put(3l, "Werner");
     }
 
+    @Override
     public String getName(long id) {
-        String name = names.get(id);
-        if (name == null) {
+        Person person = em.find(Person.class, id);
+        if (person == null) {
             return noPersonFoundMessage;
         }
-        return name;
+        return person.getName();
+    }
+
+    @Override
+    public long createPerson(String name) {
+        Person person = new Person();
+        person.setName(name);
+        em.persist(person);
+        return person.getId();
     }
 }
