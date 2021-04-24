@@ -1,5 +1,7 @@
 package ch.gisel.quarkus.dao;
 
+import org.eclipse.microprofile.config.inject.ConfigProperty;
+
 import javax.enterprise.context.ApplicationScoped;
 import java.util.HashMap;
 import java.util.Map;
@@ -9,6 +11,9 @@ public class MyFirstDAO {
 
     private Map<Long, String> names;
 
+    @ConfigProperty(name = "message.no.person.found")
+    String noPersonFoundMessage;
+
     public MyFirstDAO() {
         names = new HashMap<>();
         names.put(1l, "Daniel");
@@ -17,6 +22,10 @@ public class MyFirstDAO {
     }
 
     public String getName(long id) {
-        return names.get(id);
+        String name = names.get(id);
+        if (name == null) {
+            return noPersonFoundMessage;
+        }
+        return name;
     }
 }

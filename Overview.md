@@ -1,9 +1,12 @@
 # Quarkus Test
-[GitHub](https://github.com/daniel1978/quarkus-test)
+[GitHub Repo](https://github.com/daniel1978/quarkus-test)
 
 ## Dependency injection
-- [x] Simple
-- [ ] Properties
+
+- [x] Simple -> [Introduction to CDI](https://quarkus.io/guides/cdi)
+- [x] Inject property values -> [Configuring you application](https://quarkus.io/guides/config)
+- [ ] Inject value from environment variable
+- [ ] Overwrite annotations with XML
 
 ## Hibernate
 - [ ] Simple DB load
