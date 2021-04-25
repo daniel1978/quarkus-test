@@ -65,6 +65,13 @@
             <groupId>io.quarkus</groupId>
             <artifactId>quarkus-jdbc-postgresql</artifactId>
         </dependency>
+
+        <!-- Quarkus CXF -->
+        <dependency>
+            <groupId>io.quarkiverse.cxf</groupId>
+            <artifactId>quarkus-cxf</artifactId>
+            <version>0.5</version>
+        </dependency>
     </dependencies>
     <build>
         <plugins>

@@ -14,7 +14,7 @@
 ## CXF
 - [ ] REST Service
 - [ ] REST Client
-- [ ] SOAP Service
+- [x] SOAP Service -> [Creating a SOAP Web Service](https://quarkiverse.github.io/quarkiverse-docs/quarkus-cxf/dev/server.html)
 
 ## Camel
 - [ ] use file component to read file
